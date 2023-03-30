@@ -16,6 +16,11 @@ We must construct a model that solves the system and gives us:
 
 ![output](https://user-images.githubusercontent.com/60625769/228867273-ba16c141-7344-469c-aead-25927e5eed38.png)
 
+# Dataset
+
+The dataset can be found in [here](https://www.kaggle.com/datasets/archanghosh/linear-equation-images).
+The dataset consists of a set of tuple of images with the solution of the linear system
+
 
 # Strategy to Solve the Problem
 
