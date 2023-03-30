@@ -87,7 +87,9 @@ After converting the image into string (**making an Optical Character Recognitio
 
 # Results
 
-The final accuracy of the model was 98,7% on the test data.
+The accuracy of OCR's classification were of <b>100%</b>, in the validation data. This shows that a Random Forest can deal with simple vision problems.  The results on validation data the are shown in the confussion matrix below:
 
 ![__results___88_0](https://user-images.githubusercontent.com/60625769/228868123-57de82ca-d13b-4ef0-bb5d-64bb9e80fd2d.png)
+
+However, in the case of the final resolution of the linear system, the final accuracy of the model was about <b>98,7%</b>. The difference between the OCR's classification and the system's resolution is due the parser process, which is not always perfect.
 
