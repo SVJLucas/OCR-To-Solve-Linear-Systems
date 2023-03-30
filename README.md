@@ -64,7 +64,6 @@ And convert the **original equation image** into a **string** with the model:
 
 Converting:
 
-<h1><center><b>'20x+7y=249'</b></center></h1>
-  
+<h3>     '20x+7y=249'</h3>
 
 After converting the image into string (**making an Optical Character Recognition - OCR**), we can parser the string with **Regular Expressions** and finally get the system in the matrix form, which can be solved with the numerical numpy solver to linear systems.
