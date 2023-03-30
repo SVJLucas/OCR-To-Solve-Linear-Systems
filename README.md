@@ -1,6 +1,23 @@
 # Optical Character Recognition (OCR) To Solve Linear Systems
 The system works by taking the images of a set of linear equations and using Optical Character Recognition (OCR) technology to extract the equations from the images. The system then applies machine learning algorithms to parse and analyze the equations, determining the type of equation and the appropriate method to solve it.
 
+# Contextualizing the Problem
+
+
+Given two images of linear equations, as below:
+
+
+![first_equation](https://user-images.githubusercontent.com/60625769/228858278-75710929-2cde-41f6-ac97-ce3b653445ec.png)
+
+![second_equation](https://user-images.githubusercontent.com/60625769/228858312-d1bdbd65-b03c-4fc3-8bc3-7824459080a0.png)
+
+
+We must construct a model that solves the system and gives us:
+
+![output](https://user-images.githubusercontent.com/60625769/228867273-ba16c141-7344-469c-aead-25927e5eed38.png)
+
+
+# Strategy to Solve the Problem
 
 The most difficult part of the problem is getting the matrix's and vector's system. For exemple:
 
