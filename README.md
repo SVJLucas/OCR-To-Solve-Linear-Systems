@@ -84,3 +84,10 @@ Converting:
 <h3>     '20x+7y=249'</h3>
 
 After converting the image into string (**making an Optical Character Recognition - OCR**), we can parser the string with **Regular Expressions** and finally get the system in the matrix form, which can be solved with the numerical numpy solver to linear systems.
+
+# Results
+
+The final accuracy of the model was 98,7% on the test data.
+
+![__results___88_0](https://user-images.githubusercontent.com/60625769/228868123-57de82ca-d13b-4ef0-bb5d-64bb9e80fd2d.png)
+
