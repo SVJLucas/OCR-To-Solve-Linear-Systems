@@ -1,51 +1,67 @@
-# OCR-To-Solve-Linear-Systems
+# OCR To Solve Linear Systems
 The system works by taking a picture of a set of linear equations and using OCR technology to extract the equations from the images. The system then applies machine learning algorithms to parse and analyze the equations, determining the type of equation and the appropriate method to solve it.
 
 
 The most difficult part of the problem is getting the matrix's and vector's system. For exemple:
 
-![image.png](attachment:4ead7067-ba78-48d8-9d81-671ab58dbff5.png)
-![image.png](attachment:71cd822f-aab3-4f8b-8d47-ccc12eb86802.png)
+![first_equation](https://user-images.githubusercontent.com/60625769/228858278-75710929-2cde-41f6-ac97-ce3b653445ec.png)
+
+![second_equation](https://user-images.githubusercontent.com/60625769/228858312-d1bdbd65-b03c-4fc3-8bc3-7824459080a0.png)
 
 We can rewrite as:
 
-![image.png](attachment:03fc26dc-c597-4266-b6e7-e03b105722f8.png)
+
+![system](https://user-images.githubusercontent.com/60625769/228858412-318d59fe-1521-4dac-bd43-ea7dc1e58eee.png)
+
+
+
 
 To get these numbers to solve the system, we'll excute two strategies to parser the figure.
 
 Given the exemple image:
 
-![image.png](attachment:71cd822f-aab3-4f8b-8d47-ccc12eb86802.png)
+
+![second_equation](https://user-images.githubusercontent.com/60625769/228858711-68587e1f-0456-4968-99a7-ef9935ab92d5.png)
+
+
 
 1. First, we'll get the "groups" of the image, that is, for this image, we'll get a cropped image with the x's group (**'9x'** in the image), the signal group (**'+'** in the image), the y's group (**'19y'** in the image), the equal group (**'='** in the image) and the constant group (**'223'** in the image, but it could include a the signal of the number like '-233', if it was '-233' instead '233').
 
-![image.png](attachment:d1b40eef-6ace-4342-a38c-e238310022d7.png)
+
+![group_image](https://user-images.githubusercontent.com/60625769/228858782-da691325-5b18-4383-a0f6-e8f6417039ae.png)
+
 
 2. With this groups, we'll parser every group's image to get the "elements" in every group. **For exemple, for the x's group ('9x' in the image), we'll get an image for '9' and one for 'x'**:
 
     2.1 For the cropped image of the x's group:
 
-      ![image.png](attachment:f51b3771-e942-45ed-8370-6b1090e6c63e.png)
+      
+      
+      ![xgroup](https://user-images.githubusercontent.com/60625769/228858907-2cb54896-83ff-411c-8228-7f2d18fe00a1.png)
+
       
     2.2 We'll get the two images:
     
-      ![image.png](attachment:bda5d57e-3b62-4d9f-8667-6db1c566dc6e.png)
-      ![image.png](attachment:ae13efe3-8646-42f0-8b0f-eb5fb175ccde.png)
+
+      ![nine](https://user-images.githubusercontent.com/60625769/228858978-13d9e1cf-b187-4291-a495-be659f9091b3.png)
+      ![x](https://user-images.githubusercontent.com/60625769/228859073-42beec79-2fe9-4afb-9379-2eb5fd5c49db.png)
+       
+
       
       
 After the image parsing, we can train a model o identify the element's images (we'll utilize a Random Forest, because it's simple problem. But, if the equations were manuscript, we could utilize a Convolutional Neural Network to handle with the complexity):
 
-![Decision Tree.png](attachment:4352255f-9d6d-460b-bae3-1bae78719085.png)
 
-![Decision Tree (3).png](attachment:a92e9c7f-a720-4214-b4f6-1154b1faed19.png)
+![rf_nine](https://user-images.githubusercontent.com/60625769/228859397-dbe1095f-1502-40f4-b4c6-c0fb9369c48b.png)
 
-![Decision Tree (4).png](attachment:60acbeb5-ae64-4a5b-b256-7928361ad4ed.png)
+![rf_x](https://user-images.githubusercontent.com/60625769/228859423-8311b9e3-aba9-4cee-b1f3-0c15991f9426.png)
 
+![rf_plus](https://user-images.githubusercontent.com/60625769/228859461-7dcb40ee-ef91-4f34-bef2-6673b5697b54.png)
 
 And convert the **original equation image** into a **string** with the model:
 
- ![image.png](attachment:4ead7067-ba78-48d8-9d81-671ab58dbff5.png)
- 
+![first_equation](https://user-images.githubusercontent.com/60625769/228859680-7211c94e-e7ab-49e7-bc83-945cf1e92023.png)
+
 Converting:
 
 <h1><center><b>'20x+7y=249'</b></center></h1>
